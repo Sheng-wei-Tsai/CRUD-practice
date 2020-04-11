@@ -1,11 +1,14 @@
 class CandidatesController < ApplicationController
+  # layout "backend"
   before_action :find_candidate, only: [:edit, :update, :vote, :destroy]
   def index
     @candidates = Candidate.all
+    # render layout: "backend"
   end
 
   def new
     @candidate = Candidate.new
+    # render layout: "backend"
   end
 
   def create
@@ -35,7 +38,7 @@ class CandidatesController < ApplicationController
 
 
   def destroy
-    @candiate.destroy if @candiate 
+    @candidate.destroy if @candidate 
     redirect_to candidates_path, notice: "刪除成功!!"
   end
 
@@ -46,7 +49,7 @@ class CandidatesController < ApplicationController
   end
 
   def find_candidate
-    @candiate = Candidate.find(params[:id])
+    @candidate = Candidate.find(params[:id])
   end
 
 end
