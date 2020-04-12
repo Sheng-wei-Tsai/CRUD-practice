@@ -28,14 +28,21 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'bootstrap', '~> 4.4.1'
-
+# gem 'bootstrap', '~> 4.4.1'
+# bootstrap-sass
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 
-gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
+# gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 
 # Forms made easy!
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
+
+# font-awesome-rails provides the Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
+# gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+#Font-Awesome SASS gem for use in Ruby projects
+gem 'font-awesome-sass', '~> 5.12'
 
 
 group :development, :test do

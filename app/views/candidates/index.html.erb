@@ -1,5 +1,8 @@
+<%= content_for :my_title do %>
+  再幹嗎？
+<%end%>
 <h1>候選人選列表</h1>
-<%= link_to "新增候選人", new_candidate_path %>
+<%= link_to "<span class ='glyphicon glyphicon-knight' aria-hidden='true'></span> 新增候選人".html_safe, new_candidate_path %>
 
 <table class="table">
   <thead>
@@ -13,18 +16,6 @@
     </tr>
   </thead>
   <tbody>
-    <% @candidates.each do |candidate| %>
-    <tr>
-      <td><%= link_to "投票", vote_candidate_path(candidate), method: "post", data: {confirm: "你不後悔投給他？"}, class:"btn btn-primary"%></td>
-      <td><%= candidate.name %><%= candidate.age %>歲</td>
-      <td><%= candidate.party %></td>
-      <td><%= candidate.politics %></td>
-      <td><%= candidate.vote_logs.size %></td>
-      <td>
-        <%= link_to "編輯", edit_candidate_path(candidate) %>
-        <%= link_to "刪除", candidate_path(candidate), method: "delete", data: {confirm: "確定刪除嗎？"} %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render @candidates %>
   </tbody>
 </table>
